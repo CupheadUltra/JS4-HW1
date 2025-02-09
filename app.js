@@ -73,7 +73,7 @@ gallery.innerHTML = galleryItems
     (item) => `
             <li class="gallery__item">
                 <a class="gallery__link" href="${item.original}">
-                    <img class="gallery__image" src="${item.preview}" data-source="${item.original}" alt="${item.description}">
+                    <img class="gallery__image" src="${item.preview}" data-img="${item.original}" alt="${item.description}">
                 </a>
             </li>
         `
@@ -85,7 +85,7 @@ gallery.addEventListener("click", (event) => {
   let target = event.target;
   if (target.classList.contains("gallery__image")) {
     modal.classList.add("is-open");
-    modalImage.src = target.dataset.source;
+    modalImage.src = target.dataset.img;
     modalImage.alt = target.alt;
   }
 });
